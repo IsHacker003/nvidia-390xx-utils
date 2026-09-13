@@ -1,7 +1,7 @@
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index a9db899..4da7588 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -4464,20 +4464,22 @@ compile_test() {
              compile_check_conftest "$CODE" "NV_DRM_GEM_OBJECT_VMAP_HAS_MAP_ARG" "" "types"
          ;;
@@ -32,10 +32,10 @@ index a9db899..4da7588 100755
          ;;
  
          drm_plane_atomic_check_has_atomic_state_arg)
-diff --git a/kernel/nvidia/nvidia.Kbuild b/kernel/nvidia/nvidia.Kbuild
+diff --git a/nvidia/nvidia.Kbuild b/nvidia/nvidia.Kbuild
 index d6995ca..3a3dd17 100644
---- a/kernel/nvidia/nvidia.Kbuild
-+++ b/kernel/nvidia/nvidia.Kbuild
+--- a/nvidia/nvidia.Kbuild
++++ b/nvidia/nvidia.Kbuild
 @@ -165,7 +165,7 @@ NV_CONFTEST_FUNCTION_COMPILE_TESTS += ktime_get_raw_ts64
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += ktime_get_real_ts64
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += ioremap_nocache
@@ -45,10 +45,10 @@ index d6995ca..3a3dd17 100644
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += acpi_bus_get_device
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += acpi_video_backlight_use_native
  
-diff --git a/kernel/nvidia/os-mlock.c b/kernel/nvidia/os-mlock.c
+diff --git a/nvidia/os-mlock.c b/nvidia/os-mlock.c
 index f88daed..9e1bd0c 100644
---- a/kernel/nvidia/os-mlock.c
-+++ b/kernel/nvidia/os-mlock.c
+--- a/nvidia/os-mlock.c
++++ b/nvidia/os-mlock.c
 @@ -18,10 +18,10 @@ static inline int nv_follow_pfn(struct vm_area_struct *vma,
                                  unsigned long address,
                                  unsigned long *pfn)

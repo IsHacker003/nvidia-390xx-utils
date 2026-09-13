@@ -153,13 +153,13 @@ prepare() {
     sed -i 's/__JOBS/`nproc`/' dkms.conf
     sed -i 's/__DKMS_MODULES//' dkms.conf
     sed -i '$iBUILT_MODULE_NAME[0]="nvidia"\
-DEST_MODULE_LOCATION[0]="/kernel/drivers/video"\
+DEST_MODULE_LOCATION[0]="/drivers/video"\
 BUILT_MODULE_NAME[1]="nvidia-uvm"\
-DEST_MODULE_LOCATION[1]="/kernel/drivers/video"\
+DEST_MODULE_LOCATION[1]="/drivers/video"\
 BUILT_MODULE_NAME[2]="nvidia-modeset"\
-DEST_MODULE_LOCATION[2]="/kernel/drivers/video"\
+DEST_MODULE_LOCATION[2]="/drivers/video"\
 BUILT_MODULE_NAME[3]="nvidia-drm"\
-DEST_MODULE_LOCATION[3]="/kernel/drivers/video"' dkms.conf
+DEST_MODULE_LOCATION[3]="/drivers/video"' dkms.conf
 
     # Gift for linux-rt guys
     sed -i 's/NV_EXCLUDE_BUILD_MODULES/IGNORE_PREEMPT_RT_PRESENCE=1 NV_EXCLUDE_BUILD_MODULES/' dkms.conf

@@ -1,7 +1,7 @@
-diff --git a/kernel/nvidia-drm/nvidia-drm-drv.c b/kernel/nvidia-drm/nvidia-drm-drv.c
+diff --git a/nvidia-drm/nvidia-drm-drv.c b/nvidia-drm/nvidia-drm-drv.c
 index e5dee49..caa9e8c 100644
---- a/kernel/nvidia-drm/nvidia-drm-drv.c
-+++ b/kernel/nvidia-drm/nvidia-drm-drv.c
+--- a/nvidia-drm/nvidia-drm-drv.c
++++ b/nvidia-drm/nvidia-drm-drv.c
 @@ -766,7 +766,11 @@ static void nv_drm_update_drm_driver_features(void)
  
      nv_drm_driver.dumb_create      = nv_drm_dumb_create;

@@ -1,7 +1,7 @@
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index 3d11fc4..48b48d0 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -3360,9 +3360,9 @@ compile_test() {
              compile_check_conftest "$CODE" "NV_DRM_ATOMIC_MODESET_NONBLOCKING_COMMIT_AVAILABLE" "" "generic"
          ;;
@@ -164,10 +164,10 @@ index 3d11fc4..48b48d0 100755
              fi
          ;;
  
-diff --git a/kernel/nvidia-drm/nvidia-drm-crtc.c b/kernel/nvidia-drm/nvidia-drm-crtc.c
+diff --git a/nvidia-drm/nvidia-drm-crtc.c b/nvidia-drm/nvidia-drm-crtc.c
 index 9253bd5..0d94703 100644
---- a/kernel/nvidia-drm/nvidia-drm-crtc.c
-+++ b/kernel/nvidia-drm/nvidia-drm-crtc.c
+--- a/nvidia-drm/nvidia-drm-crtc.c
++++ b/nvidia-drm/nvidia-drm-crtc.c
 @@ -130,15 +130,15 @@ plane_req_config_update(struct drm_plane_state *plane_state,
          old_config.dstHeight != req_config->config.dstHeight;
  }
@@ -206,10 +206,10 @@ index 9253bd5..0d94703 100644
      struct drm_crtc_state *crtc_state =
          drm_atomic_get_new_crtc_state(state, crtc);
  #endif
-diff --git a/kernel/nvidia-drm/nvidia-drm-modeset.c b/kernel/nvidia-drm/nvidia-drm-modeset.c
+diff --git a/nvidia-drm/nvidia-drm-modeset.c b/nvidia-drm/nvidia-drm-modeset.c
 index 5bbcd4a..f58a38c 100644
---- a/kernel/nvidia-drm/nvidia-drm-modeset.c
-+++ b/kernel/nvidia-drm/nvidia-drm-modeset.c
+--- a/nvidia-drm/nvidia-drm-modeset.c
++++ b/nvidia-drm/nvidia-drm-modeset.c
 @@ -42,23 +42,23 @@
  #include <drm/drm_atomic_helper.h>
  #include <drm/drm_crtc.h>
@@ -307,10 +307,10 @@ index 5bbcd4a..f58a38c 100644
      /*
       * If ref counting is present, state will be freed when the caller
       * drops its reference after we return.
-diff --git a/kernel/nvidia-drm/nvidia-drm-modeset.h b/kernel/nvidia-drm/nvidia-drm-modeset.h
+diff --git a/nvidia-drm/nvidia-drm-modeset.h b/nvidia-drm/nvidia-drm-modeset.h
 index effb990..418891e 100644
---- a/kernel/nvidia-drm/nvidia-drm-modeset.h
-+++ b/kernel/nvidia-drm/nvidia-drm-modeset.h
+--- a/nvidia-drm/nvidia-drm-modeset.h
++++ b/nvidia-drm/nvidia-drm-modeset.h
 @@ -30,17 +30,17 @@
  #include "nvkms-kapi.h"
  
@@ -335,10 +335,10 @@ index effb990..418891e 100644
  
  
  void nv_drm_handle_flip_occurred(struct nv_drm_device *nv_dev,
-diff --git a/kernel/nvidia-drm/nvidia-drm-priv.h b/kernel/nvidia-drm/nvidia-drm-priv.h
+diff --git a/nvidia-drm/nvidia-drm-priv.h b/nvidia-drm/nvidia-drm-priv.h
 index 953c2eb..df7db28 100644
---- a/kernel/nvidia-drm/nvidia-drm-priv.h
-+++ b/kernel/nvidia-drm/nvidia-drm-priv.h
+--- a/nvidia-drm/nvidia-drm-priv.h
++++ b/nvidia-drm/nvidia-drm-priv.h
 @@ -25,6 +25,17 @@
  
  #include "nvidia-drm-conftest.h" /* NV_DRM_AVAILABLE */
@@ -357,10 +357,10 @@ index 953c2eb..df7db28 100644
  #if defined(NV_DRM_AVAILABLE)
  
  #if defined(NV_DRM_DRMP_H_PRESENT)
-diff --git a/kernel/nvidia-drm/nvidia-drm.Kbuild b/kernel/nvidia-drm/nvidia-drm.Kbuild
+diff --git a/nvidia-drm/nvidia-drm.Kbuild b/nvidia-drm/nvidia-drm.Kbuild
 index e283874..04e163e 100644
---- a/kernel/nvidia-drm/nvidia-drm.Kbuild
-+++ b/kernel/nvidia-drm/nvidia-drm.Kbuild
+--- a/nvidia-drm/nvidia-drm.Kbuild
++++ b/nvidia-drm/nvidia-drm.Kbuild
 @@ -57,7 +57,7 @@ NV_CONFTEST_FUNCTION_COMPILE_TESTS += drm_reinit_primary_mode_group
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += get_user_pages_remote
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += get_user_pages
@@ -382,10 +382,10 @@ index e283874..04e163e 100644
  NV_CONFTEST_TYPE_COMPILE_TESTS += drm_device_has_pdev
  NV_CONFTEST_TYPE_COMPILE_TESTS += dma_resv_add_fence
  NV_CONFTEST_TYPE_COMPILE_TESTS += dma_resv_reserve_fences
-diff --git a/kernel/nvidia-modeset/nvidia-modeset-linux.c b/kernel/nvidia-modeset/nvidia-modeset-linux.c
+diff --git a/nvidia-modeset/nvidia-modeset-linux.c b/nvidia-modeset/nvidia-modeset-linux.c
 index 4042687..aee5923 100644
---- a/kernel/nvidia-modeset/nvidia-modeset-linux.c
-+++ b/kernel/nvidia-modeset/nvidia-modeset-linux.c
+--- a/nvidia-modeset/nvidia-modeset-linux.c
++++ b/nvidia-modeset/nvidia-modeset-linux.c
 @@ -181,7 +181,18 @@ int NVKMS_API_CALL nvkms_strcmp(const char *s1, const char *s2)
  
  char* NVKMS_API_CALL nvkms_strncpy(char *dest, const char *src, size_t n)
@@ -405,10 +405,10 @@ index 4042687..aee5923 100644
  }
  
  void NVKMS_API_CALL nvkms_usleep(NvU64 usec)
-diff --git a/kernel/nvidia-uvm/uvm8_pmm_gpu.c b/kernel/nvidia-uvm/uvm8_pmm_gpu.c
+diff --git a/nvidia-uvm/uvm8_pmm_gpu.c b/nvidia-uvm/uvm8_pmm_gpu.c
 index 602a286..d6eb597 100644
---- a/kernel/nvidia-uvm/uvm8_pmm_gpu.c
-+++ b/kernel/nvidia-uvm/uvm8_pmm_gpu.c
+--- a/nvidia-uvm/uvm8_pmm_gpu.c
++++ b/nvidia-uvm/uvm8_pmm_gpu.c
 @@ -2794,7 +2794,12 @@ NV_STATUS init_chunk_split_cache_level(uvm_pmm_gpu_t *pmm, size_t level)
              size_t size;
              size_t align;
@@ -422,10 +422,10 @@ index 602a286..d6eb597 100644
                  size = sizeof(uvm_gpu_chunk_t);
                  align = __alignof__(uvm_gpu_chunk_t);
              } else {
-diff --git a/kernel/nvidia/nv-gpu-numa.c b/kernel/nvidia/nv-gpu-numa.c
+diff --git a/nvidia/nv-gpu-numa.c b/nvidia/nv-gpu-numa.c
 index 7916d35..b1aef08 100644
---- a/kernel/nvidia/nv-gpu-numa.c
-+++ b/kernel/nvidia/nv-gpu-numa.c
+--- a/nvidia/nv-gpu-numa.c
++++ b/nvidia/nv-gpu-numa.c
 @@ -158,8 +158,13 @@ static int filldir_get_memblock_id(struct dir_context *ctx,
      if (name_len + 1 > BUF_SIZE)
          return -ERANGE;
@@ -440,10 +440,10 @@ index 7916d35..b1aef08 100644
  
      // Convert the memory block ID into an integer
      if (kstrtoull(name_copy + strlen(MEMBLOCK_PREFIX), 0, &memblock_id) != 0) 
-diff --git a/kernel/nvidia/os-interface.c b/kernel/nvidia/os-interface.c
+diff --git a/nvidia/os-interface.c b/nvidia/os-interface.c
 index 87780ad..432186d 100644
---- a/kernel/nvidia/os-interface.c
-+++ b/kernel/nvidia/os-interface.c
+--- a/nvidia/os-interface.c
++++ b/nvidia/os-interface.c
 @@ -642,8 +642,13 @@ NvU32 NV_API_CALL os_get_current_process(void)
  void NV_API_CALL os_get_current_process_name(char *buf, NvU32 len)
  {

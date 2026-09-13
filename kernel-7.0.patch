@@ -1,7 +1,7 @@
-diff --git a/kernel/common/inc/nv-linux.h b/kernel/common/inc/nv-linux.h
+diff --git a/common/inc/nv-linux.h b/common/inc/nv-linux.h
 index 37cb593..7b23f91 100644
---- a/kernel/common/inc/nv-linux.h
-+++ b/kernel/common/inc/nv-linux.h
+--- a/common/inc/nv-linux.h
++++ b/common/inc/nv-linux.h
 @@ -204,6 +204,9 @@ static inline uid_t __kuid_val(kuid_t uid)
  #endif
  #if defined(NV_LINUX_SCREEN_INFO_H_PRESENT)
@@ -12,10 +12,10 @@ index 37cb593..7b23f91 100644
  #else
  #include <linux/tty.h>              /* screen_info                      */
  #endif
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index fe2a7b9..3d11fc4 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -4659,6 +4659,27 @@ compile_test() {
  
              compile_check_conftest "$CODE" "NV_ACPI_VIDEO_BACKLIGHT_USE_NATIVE" "" "functions"
@@ -44,10 +44,10 @@ index fe2a7b9..3d11fc4 100755
      esac
  }
  
-diff --git a/kernel/nvidia-drm/nvidia-dma-fence-helper.h b/kernel/nvidia-drm/nvidia-dma-fence-helper.h
+diff --git a/nvidia-drm/nvidia-dma-fence-helper.h b/nvidia-drm/nvidia-dma-fence-helper.h
 index a09ab76..6221bf2 100644
---- a/kernel/nvidia-drm/nvidia-dma-fence-helper.h
-+++ b/kernel/nvidia-drm/nvidia-dma-fence-helper.h
+--- a/nvidia-drm/nvidia-dma-fence-helper.h
++++ b/nvidia-drm/nvidia-dma-fence-helper.h
 @@ -89,11 +89,12 @@ nv_dma_fence_default_wait(nv_dma_fence_t *fence,
  #endif
  }
@@ -64,10 +64,10 @@ index a09ab76..6221bf2 100644
  #endif
  }
  
-diff --git a/kernel/nvidia/nvidia.Kbuild b/kernel/nvidia/nvidia.Kbuild
+diff --git a/nvidia/nvidia.Kbuild b/nvidia/nvidia.Kbuild
 index d2c8410..bec0ddf 100644
---- a/kernel/nvidia/nvidia.Kbuild
-+++ b/kernel/nvidia/nvidia.Kbuild
+--- a/nvidia/nvidia.Kbuild
++++ b/nvidia/nvidia.Kbuild
 @@ -174,6 +174,7 @@ NV_CONFTEST_FUNCTION_COMPILE_TESTS += acpi_video_backlight_use_native
  NV_CONFTEST_SYMBOL_COMPILE_TESTS += is_export_symbol_gpl_of_node_to_nid
  NV_CONFTEST_SYMBOL_COMPILE_TESTS += is_export_symbol_present_swiotlb_map_sg_attrs
@@ -76,10 +76,10 @@ index d2c8410..bec0ddf 100644
  
  NV_CONFTEST_TYPE_COMPILE_TESTS += i2c_adapter
  NV_CONFTEST_TYPE_COMPILE_TESTS += pm_message_t
-diff --git a/kernel/nvidia/os-interface.c b/kernel/nvidia/os-interface.c
+diff --git a/nvidia/os-interface.c b/nvidia/os-interface.c
 index dd65432..87780ad 100644
---- a/kernel/nvidia/os-interface.c
-+++ b/kernel/nvidia/os-interface.c
+--- a/nvidia/os-interface.c
++++ b/nvidia/os-interface.c
 @@ -1126,6 +1126,14 @@ void NV_API_CALL os_get_screen_info(
  )
  {

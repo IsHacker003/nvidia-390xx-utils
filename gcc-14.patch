@@ -1,7 +1,7 @@
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index 093704c..a9db899 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -153,7 +153,8 @@ test_headers() {
  build_cflags() {
      BASE_CFLAGS="-O2 -D__KERNEL__ \

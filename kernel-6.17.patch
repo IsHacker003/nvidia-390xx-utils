@@ -1,7 +1,7 @@
-diff --git a/kernel/nvidia-drm/nvidia-drm-drv.c b/kernel/nvidia-drm/nvidia-drm-drv.c
+diff --git a/nvidia-drm/nvidia-drm-drv.c b/nvidia-drm/nvidia-drm-drv.c
 index 7feb5d2..2bcf29c 100644
---- a/kernel/nvidia-drm/nvidia-drm-drv.c
-+++ b/kernel/nvidia-drm/nvidia-drm-drv.c
+--- a/nvidia-drm/nvidia-drm-drv.c
++++ b/nvidia-drm/nvidia-drm-drv.c
 @@ -139,6 +139,10 @@ static void nv_drm_output_poll_changed(struct drm_device *dev)
  static struct drm_framebuffer *nv_drm_framebuffer_create(
      struct drm_device *dev,
@@ -24,10 +24,10 @@ index 7feb5d2..2bcf29c 100644
              &local_cmd);
  
      #if !defined(NV_DRM_HELPER_MODE_FILL_FB_STRUCT_HAS_CONST_MODE_CMD_ARG)
-diff --git a/kernel/nvidia-drm/nvidia-drm-fb.c b/kernel/nvidia-drm/nvidia-drm-fb.c
+diff --git a/nvidia-drm/nvidia-drm-fb.c b/nvidia-drm/nvidia-drm-fb.c
 index c35e0ee..91161ff 100644
---- a/kernel/nvidia-drm/nvidia-drm-fb.c
-+++ b/kernel/nvidia-drm/nvidia-drm-fb.c
+--- a/nvidia-drm/nvidia-drm-fb.c
++++ b/nvidia-drm/nvidia-drm-fb.c
 @@ -32,6 +32,7 @@
  #include "nvidia-drm-helper.h"
  
@@ -58,10 +58,10 @@ index c35e0ee..91161ff 100644
          cmd);
  
      /*
-diff --git a/kernel/nvidia-drm/nvidia-drm-fb.h b/kernel/nvidia-drm/nvidia-drm-fb.h
+diff --git a/nvidia-drm/nvidia-drm-fb.h b/nvidia-drm/nvidia-drm-fb.h
 index bfa93fd..68a634a 100644
---- a/kernel/nvidia-drm/nvidia-drm-fb.h
-+++ b/kernel/nvidia-drm/nvidia-drm-fb.h
+--- a/nvidia-drm/nvidia-drm-fb.h
++++ b/nvidia-drm/nvidia-drm-fb.h
 @@ -35,6 +35,8 @@
  #include <drm/drm_framebuffer.h>
  #endif

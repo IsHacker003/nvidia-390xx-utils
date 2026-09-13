@@ -1,7 +1,7 @@
-diff --git a/kernel/common/inc/nv-linux.h b/kernel/common/inc/nv-linux.h
+diff --git a/common/inc/nv-linux.h b/common/inc/nv-linux.h
 index 10fc418..22ef968 100644
---- a/kernel/common/inc/nv-linux.h
-+++ b/kernel/common/inc/nv-linux.h
+--- a/common/inc/nv-linux.h
++++ b/common/inc/nv-linux.h
 @@ -174,7 +174,11 @@ static inline uid_t __kuid_val(kuid_t uid)
  
  #if defined(NV_VM_INSERT_PAGE_PRESENT)
@@ -14,10 +14,10 @@ index 10fc418..22ef968 100644
  
  #if defined(NV_LINUX_DMA_MAP_OPS_H_PRESENT)
  #include <linux/dma-map-ops.h>
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index b23dbb4..42dc576 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -2056,7 +2056,12 @@ compile_test() {
              # Determine if the phys_to_dma function is present.
              #

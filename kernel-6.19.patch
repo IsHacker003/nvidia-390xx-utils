@@ -1,7 +1,7 @@
-diff --git a/kernel/common/inc/nv-memdbg.h b/kernel/common/inc/nv-memdbg.h
+diff --git a/common/inc/nv-memdbg.h b/common/inc/nv-memdbg.h
 index c618ead..8212d44 100644
---- a/kernel/common/inc/nv-memdbg.h
-+++ b/kernel/common/inc/nv-memdbg.h
+--- a/common/inc/nv-memdbg.h
++++ b/common/inc/nv-memdbg.h
 @@ -28,8 +28,9 @@ void nv_memdbg_exit(void);
  
  #else
@@ -14,10 +14,10 @@ index c618ead..8212d44 100644
  
  #endif /* NV_MEM_LOGGER */
  
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index 1106ea5..fe2a7b9 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -256,6 +256,11 @@ build_cflags() {
              CFLAGS="$CFLAGS -mfentry -DCC_USING_FENTRY"
          fi
@@ -30,10 +30,10 @@ index 1106ea5..fe2a7b9 100755
  }
  
  CONFTEST_PREAMBLE="#include \"conftest/headers.h\"
-diff --git a/kernel/nvidia-drm/nvidia-drm-crtc.c b/kernel/nvidia-drm/nvidia-drm-crtc.c
+diff --git a/nvidia-drm/nvidia-drm-crtc.c b/nvidia-drm/nvidia-drm-crtc.c
 index 6d5478e..9253bd5 100644
---- a/kernel/nvidia-drm/nvidia-drm-crtc.c
-+++ b/kernel/nvidia-drm/nvidia-drm-crtc.c
+--- a/nvidia-drm/nvidia-drm-crtc.c
++++ b/nvidia-drm/nvidia-drm-crtc.c
 @@ -151,7 +151,7 @@ static int nv_drm_plane_atomic_check(struct drm_plane *plane,
          goto done;
      }
@@ -54,10 +54,10 @@ index 6d5478e..9253bd5 100644
              if (connector_state->crtc != crtc) {
                  continue;
              }
-diff --git a/kernel/nvidia-drm/nvidia-drm-drv.c b/kernel/nvidia-drm/nvidia-drm-drv.c
+diff --git a/nvidia-drm/nvidia-drm-drv.c b/nvidia-drm/nvidia-drm-drv.c
 index 2bcf29c..6e8d258 100644
---- a/kernel/nvidia-drm/nvidia-drm-drv.c
-+++ b/kernel/nvidia-drm/nvidia-drm-drv.c
+--- a/nvidia-drm/nvidia-drm-drv.c
++++ b/nvidia-drm/nvidia-drm-drv.c
 @@ -540,13 +540,13 @@ void nv_drm_master_drop(struct drm_device *dev, struct drm_file *file_priv)
  
      drm_modeset_lock_all(dev);
@@ -74,10 +74,10 @@ index 2bcf29c..6e8d258 100644
              err);
      }
  
-diff --git a/kernel/nvidia-drm/nvidia-drm-helper.c b/kernel/nvidia-drm/nvidia-drm-helper.c
+diff --git a/nvidia-drm/nvidia-drm-helper.c b/nvidia-drm/nvidia-drm-helper.c
 index 8b89afe..e6ab0e6 100644
---- a/kernel/nvidia-drm/nvidia-drm-helper.c
-+++ b/kernel/nvidia-drm/nvidia-drm-helper.c
+--- a/nvidia-drm/nvidia-drm-helper.c
++++ b/nvidia-drm/nvidia-drm-helper.c
 @@ -62,141 +62,4 @@ static void __nv_drm_framebuffer_put(struct drm_framebuffer *fb)
  
  }
@@ -220,10 +220,10 @@ index 8b89afe..e6ab0e6 100644
 -}
 -
  #endif /* NV_DRM_ATOMIC_MODESET_AVAILABLE */
-diff --git a/kernel/nvidia-drm/nvidia-drm-helper.h b/kernel/nvidia-drm/nvidia-drm-helper.h
+diff --git a/nvidia-drm/nvidia-drm-helper.h b/nvidia-drm/nvidia-drm-helper.h
 index 831737d..0fce7b2 100644
---- a/kernel/nvidia-drm/nvidia-drm-helper.h
-+++ b/kernel/nvidia-drm/nvidia-drm-helper.h
+--- a/nvidia-drm/nvidia-drm-helper.h
++++ b/nvidia-drm/nvidia-drm-helper.h
 @@ -156,127 +156,6 @@ nv_drm_prime_pages_to_sg(struct drm_device *dev,
  #include <drm/drm_atomic.h>
  #include <drm/drm_atomic_helper.h>
@@ -352,10 +352,10 @@ index 831737d..0fce7b2 100644
  static inline struct drm_crtc *nv_drm_crtc_find(struct drm_device *dev,
      uint32_t id)
  {
-diff --git a/kernel/nvidia-drm/nvidia-drm-modeset.c b/kernel/nvidia-drm/nvidia-drm-modeset.c
+diff --git a/nvidia-drm/nvidia-drm-modeset.c b/nvidia-drm/nvidia-drm-modeset.c
 index 3a57e8e..5bbcd4a 100644
---- a/kernel/nvidia-drm/nvidia-drm-modeset.c
-+++ b/kernel/nvidia-drm/nvidia-drm-modeset.c
+--- a/nvidia-drm/nvidia-drm-modeset.c
++++ b/nvidia-drm/nvidia-drm-modeset.c
 @@ -112,20 +112,13 @@ nv_drm_atomic_apply_modeset_config(struct drm_device *dev,
      struct NvKmsKapiRequestedModeSetConfig *requested_config =
          &(to_nv_atomic_state(state)->config);
@@ -414,10 +414,10 @@ index 3a57e8e..5bbcd4a 100644
              struct nv_drm_crtc *nv_crtc = to_nv_crtc(crtc);
  
              /*
-diff --git a/kernel/nvidia-drm/nvidia-drm-priv.h b/kernel/nvidia-drm/nvidia-drm-priv.h
+diff --git a/nvidia-drm/nvidia-drm-priv.h b/nvidia-drm/nvidia-drm-priv.h
 index 4f1a0e7..953c2eb 100644
---- a/kernel/nvidia-drm/nvidia-drm-priv.h
-+++ b/kernel/nvidia-drm/nvidia-drm-priv.h
+--- a/nvidia-drm/nvidia-drm-priv.h
++++ b/nvidia-drm/nvidia-drm-priv.h
 @@ -39,6 +39,9 @@
  #include <drm/drm_gem.h>
  #endif
@@ -428,10 +428,10 @@ index 4f1a0e7..953c2eb 100644
  #include "nvidia-drm-os-interface.h"
  
  #include "nvkms-kapi.h"
-diff --git a/kernel/nvidia/nv-dma.c b/kernel/nvidia/nv-dma.c
+diff --git a/nvidia/nv-dma.c b/nvidia/nv-dma.c
 index a06c12c..c30f8cc 100644
---- a/kernel/nvidia/nv-dma.c
-+++ b/kernel/nvidia/nv-dma.c
+--- a/nvidia/nv-dma.c
++++ b/nvidia/nv-dma.c
 @@ -13,6 +13,7 @@
  
  #include "os-interface.h"
@@ -454,10 +454,10 @@ index a06c12c..c30f8cc 100644
  #else
      return NV_FALSE;
  #endif
-diff --git a/kernel/nvidia/nvlink_linux.c b/kernel/nvidia/nvlink_linux.c
+diff --git a/nvidia/nvlink_linux.c b/nvidia/nvlink_linux.c
 index ba57b86..39816ae 100644
---- a/kernel/nvidia/nvlink_linux.c
-+++ b/kernel/nvidia/nvlink_linux.c
+--- a/nvidia/nvlink_linux.c
++++ b/nvidia/nvlink_linux.c
 @@ -30,6 +30,7 @@
  #include "nv-linux.h"
  #include "nv-procfs.h"
@@ -475,10 +475,10 @@ index ba57b86..39816ae 100644
      {
          return;
      }
-diff --git a/kernel/nvidia/os-interface.c b/kernel/nvidia/os-interface.c
+diff --git a/nvidia/os-interface.c b/nvidia/os-interface.c
 index 262171f..dd65432 100644
---- a/kernel/nvidia/os-interface.c
-+++ b/kernel/nvidia/os-interface.c
+--- a/nvidia/os-interface.c
++++ b/nvidia/os-interface.c
 @@ -17,6 +17,8 @@
  #include "nv-time.h"
  #include "nv-gpu-numa.h"

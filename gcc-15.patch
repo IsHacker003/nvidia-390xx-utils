@@ -1,7 +1,7 @@
-diff --git a/kernel/Kbuild b/kernel/Kbuild
+diff --git a/Kbuild b/Kbuild
 index 85aa267..baa6986 100644
---- a/kernel/Kbuild
-+++ b/kernel/Kbuild
+--- a/Kbuild
++++ b/Kbuild
 @@ -61,6 +61,7 @@ $(foreach _module, $(NV_KERNEL_MODULES), \
  # $(EXTRA_CFLAGS) to ccflags-y for compatibility.
  #
@@ -10,10 +10,10 @@ index 85aa267..baa6986 100644
  EXTRA_CFLAGS += -I$(src)/common/inc
  EXTRA_CFLAGS += -I$(src)
  EXTRA_CFLAGS += -Wall -MD $(DEFINES) $(INCLUDES) -Wsign-compare -Wno-cast-qual -Wno-error
-diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+diff --git a/conftest.sh b/conftest.sh
 index 4da7588..1106ea5 100755
---- a/kernel/conftest.sh
-+++ b/kernel/conftest.sh
+--- a/conftest.sh
++++ b/conftest.sh
 @@ -151,7 +151,7 @@ test_headers() {
  }
  
